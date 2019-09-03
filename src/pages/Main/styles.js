@@ -10,12 +10,14 @@ export const Product = styled.View`
   padding: 10px;
   margin: 15px;
   border-radius: 4px;
-  width: 220px;
+  width: 300px;
+  align-self: center;
 `;
 
 export const ProductImage = styled.Image`
   height: 200px;
   width: 200px;
+  align-self: center;
 `;
 
 export const ProductTitle = styled.Text`

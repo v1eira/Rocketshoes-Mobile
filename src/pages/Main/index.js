@@ -71,11 +71,12 @@ class Main extends React.Component {
     return (
       <Container>
         <FlatList
-          horizontal
+          vertical
           data={products}
           extraData={this.props}
           keyExtractor={item => String(item.id)}
           renderItem={this.renderProduct}
+          showsVerticalScrollIndicator={false}
         />
       </Container>
     );
