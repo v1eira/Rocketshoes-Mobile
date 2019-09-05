@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Image, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -7,7 +7,9 @@ import logo from '../../assets/logo.png';
 
 import { Header, CartInfo, CartCounter } from './styles';
 
-function CustomHeader({ navigation, cartSize }) {
+export default function CustomHeader({ navigation }) {
+  const cartSize = useSelector(state => state.cart.length);
+
   return (
     <Header>
       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
@@ -26,10 +28,3 @@ function CustomHeader({ navigation, cartSize }) {
     </Header>
   );
 }
-
-export default connect(
-  state => ({
-    cartSize: state.cart.length,
-  }),
-  null
-)(CustomHeader);
